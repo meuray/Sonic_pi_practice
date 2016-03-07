@@ -1,0 +1,107 @@
+define :act0 do
+  play 62
+  sleep 0.5
+  play 60
+  sleep 0.5
+  play 62
+  sleep 0.5
+  play 63
+  sleep 0.5
+  play 65
+  sleep 1
+  play 62
+end
+
+define :act1 do
+  play 62
+  sleep 0.5
+  play 60
+  sleep 0.5
+  play 62
+  sleep 0.5
+  play 63
+  sleep 0.5
+  play 65
+  sleep 0.5
+  play 69
+  sleep 0.5
+  play 65
+end
+
+define :act2 do
+  play 62
+  sleep 0.5
+  play 63
+  sleep 0.5
+  play 65
+  sleep 1
+  play 62
+end
+
+define :act3 do
+  play 70
+  sleep 0.5
+  play 69
+  sleep 0.5
+  play 67
+  sleep 0.5
+  play 65
+  sleep 0.5
+  play 63
+  sleep 0.5
+  play 62
+  sleep 0.5
+  play 60
+  sleep 0.5
+  play 58
+  sleep 0.5
+end
+
+define :act4 do
+  2.times do
+    play 58
+    sleep 0.5
+    play 62
+    sleep 0.5
+    play 63
+    sleep 0.5
+    play 65
+    sleep 1
+  end
+
+  play 58
+  sleep 0.5
+  play 62
+  sleep 0.5
+  play 63
+  sleep 0.5
+  play 65
+  sleep 0.5
+  play 69
+  sleep 0.5
+  play 65
+  sleep 0.5
+end
+
+in_thread do
+  use_synth :saw
+  loop do
+    act0
+    sleep 1
+    act1
+    sleep 1
+    act2
+    sleep 1
+    act1
+    sleep 1
+    2.times do
+      act3
+    end
+    act4
+    sleep 0.5
+    2.times do
+      act3
+    end
+    sleep 0.5
+  end
+end
